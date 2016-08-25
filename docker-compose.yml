@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  GitlabCIMultiRunner:
+    restart: always
+    image: sameersbn/gitlab-ci-multi-runner:1.1.4-3
+    volumes:
+      - /srv/docker/gitlab-runner:/home/gitlab_ci_multi_runner/data
+    env_file:
+      - gitlab-ci-multi-runner.env
